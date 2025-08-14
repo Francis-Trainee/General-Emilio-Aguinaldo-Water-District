@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water District</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 28px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .bordered-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .bordered-image {
+        border: 2px solid #333;
+        border-radius: 50%;
+    }
+
+    p {
+        color: #666;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    a {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    a:hover {
+        background-color: skyblue;
+    }
+
+    footer {
+        background-color:  #063b50;
+        color: white;
+        padding: 10px 0;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+</style>
+
+</head>
+<body>
+  
+     
+    <div class="container">
+        <img src="logo.jpg" alt="GEAWD Water District Logo" style="width: 100px; height: auto;" class="bordered-image">
+        <h1 style="text-align: center;">Gen. E. Aguinaldo Water District</h1>
+        </div>
+        
+    <section id="boards">
+        <div class="container">
+            <h1>Members Of Organizational</h1>
+        </div>
+    </section>
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="" alt="Board Member 1" class="bordered-img">
+            <p>GENERAL MANAGER: ENGR. IKAN ERWIN A.</p>
+        </div>
+
+        <div class="card">
+            <img src="M7.jpg" alt="Board Member 2" class="bordered-img">
+            <p>ADMIN SERVICES OFFICER B. : TAFALLA, MERCCEDITA J.</p>
+        </div>
+
+        <div class="card">
+            <img src="M10.jpg" alt="Board Member 3" class="bordered-img">
+            <p>ADMIN SERVICES ASST. A: HERNANDEZ JENNIFER G.</p>
+        </div>
+
+        <div class="card">
+            <img src="M5.jpg" alt="Board Member 4" class="bordered-img">
+            <p>CASHIERING ASSISTANT: PERDON EDWIN Q.</p>
+        </div>
+
+        <div class="card">
+            <img src="M8.jpg" alt="Board Member 5" class="bordered-img">
+            <p>CUSTOMER SERV. ASST. C: LOYOLA NELSON M.</p>
+        </div>
+        
+             <div class="card">
+            <img src="M11.jpg" alt="Board Member 6" class="bordered-img">
+            <p>ACCOUTING PROCESSOR A. : DELIMA KATHERYNE A.</p>
+        </div>
+
+        <div class="card">
+            <img src="M3.jpg" alt="Board Member 6" class="bordered-img">
+            <p>WATER MAINT. MAN A.: IKAN MONTANO M.</p>
+        </div>
+
+        <div class="card">
+            <img src="" alt="Board Member 7" class="bordered-img">
+            <p>ENGINEER AIDE A.: CASTRONUEVO VANESSA C.</p>
+        </div>
+
+        <div class="card">
+            <img src="M3.jpg" alt="Board Member 8" class="bordered-img">
+            <p>WATER RES. OPTR. B.: HERNANDEZ ANTONIO JR. M</p>
+        </div>
+
+        <div class="card">
+            <img src="M6.jpg" alt="Board Member 9" class="bordered-img">
+            <p>CUSTOMER SERV ASST P.:  BANDALES ROSE MAY B
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="M2.jpg" alt="Board Member 10" class="bordered-img">
+            <p>ADMIN SERVICES AIDE: ANGUE MYREM M.</p>
+        </div>
+
+        <div class="card">
+            <img src="M9.jpg" alt="Board Member 11" class="bordered-img">
+            <p>ENGINEER AIDE B.: DIMAPILIS SHERYL V.</p>
+        </div>
+    
+    
+        <div class="card">
+            <img src="M1.jpg" alt="Board Member 11" class="bordered-img">
+            <p>UTILITIES SERVICES ASST. E.: DEPADUA MARCELINO JR. P</p>
+        </div>
+    </div>
+
+    <a href="boards.html">Back</a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Water District. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const images = document.querySelectorAll('.card img');
+
+        images.forEach(img => {
+            img.onerror = function () {
+                this.src = 'placeholder.jpg';  // Fallback image if the original fails to load
+            };
+        });
+    });
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water District</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #063b50;
+            padding: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger .line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 20px 0 10px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Add background blur effect */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/blue.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar a {
+                padding: 10px;
+                border-top: 1px solid #ccc;
+                font-size: 20px;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+        }
+
+        .board-container {
+            background-color: #f4f4f4;
+            border: 2px solid #063b50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #063b50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Enhance images with border */
+        img.bordered-image {
+            border: 3px solid #063b50;
+            padding: 5px;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style paragraphs with borders */
+        .bordered-paragraph {
+            border: 2px solid #063b50;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            text-align: left;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="navbar" id="navbar">
+            <a href="main.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="boards.html">Boards of Members</a>
+            <a href="careers.html">Careers</a>
+            <a href="citizens.html">Citizen's Charter</a>
+            <a href="transparency.html">Transparency Seal</a>
+            <a href="contacts.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="logo.jpg" alt="GEAWD Water District Logo" style="width: 100px; height: auto;" class="bordered-image">
+        <h1 style="text-align: center;">Gen. E. Aguinaldo Water District</h1>
+
+        <section id="citizens-charter">
+            <h2></h2>
+            <img src="redtape.jpg" alt="Red Tape" class="bordered-image">
+
+            <h1>Anti-Red Tape Act of 2007</h1>
+            <p class="bordered-paragraph">
+                “An Act to Improve Efficiency in the Delivery of Government Service to the Public by Reducing Bureaucratic Red Tape, Preventing Graft and Corruption, and Providing Penalties Thereof” Republic Act No. 9485, otherwise known as the Anti-Red Tape Act of 2007, was signed into law by President Gloria Macapagal-Arroyo on June 2, 2007. RA No. 9485 aims to promote transparency in government with regard to the manner of transacting with the public by requiring each agency to simplify frontline service procedures, formulate service standards to observe in every transaction, and make known standards to clients.
+            </p>
+            <p class="bordered-paragraph">
+                Pursuant to Section 16 of the Anti-Red Tape Act of 2007, the Civil Service Commission has promulgated the Implementing Rules and Regulations (IRR) of the said Act through CSC Resolution No. 081471 dated July 24, 2008. These Rules apply to all government offices and agencies including local government units and government-owned and controlled corporations with or without original charter, that provide frontline services as defined in the Act. Those performing judicial, quasi-judicial, and legislative functions are excluded from the coverage of the Act, however, their respective frontline services are deemed included.
+            </p>
+            <p class="bordered-paragraph">
+                It is hereby declared the policy of the State to promote integrity, accountability, proper management of public affairs and public property as well as to establish effective practices aimed at the prevention of graft and corruption in government. Towards this end, the State shall maintain honesty and responsibility among its public officials or agencies with regard to the manner of transacting with the public, which shall encompass a program for the adoption of simplified procedures that will reduce red tape and expedite transactions in government.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Water District. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('burger').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
