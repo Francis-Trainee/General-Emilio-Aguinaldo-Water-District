@@ -4,39 +4,45 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
   color: #222;
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #063b50;
-    padding: 10px;
+    background: #006994;
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 0%;
     z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
     padding: 10px;
+}
+
+.logo img{
+    width: 80px;
+    height: auto;
+}
+
+.logo-text h1 {
+    color: white;
+    font-size: 24px;
+    margin-left: 10px;
 }
 
 /* Burger hidden by default (desktop view) */
@@ -47,24 +53,9 @@ nav {
 }
 
 .burger span {
-    font-size: 35px; 
-}
-
-.container {
-    text-align: center;
+    font-size: 35px;
     padding: 20px;
-    margin-top: 80px;
-}
-
-.container img {
-    width: 100px;
-    height: auto;
-}
-
-.container h1 {
-    margin-top: 10px;
-    font-size: 2em;
-    color: #333;
+    color: white; 
 }
 
 .content {
@@ -106,59 +97,6 @@ nav {
     width: 100%;
     height: 200px;
     object-fit: cover;
-}
-
-#video-section {
-    background: #fff;
-    padding: 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-#video-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(6, 59, 80, 0.6), rgba(6, 59, 80, 0.6));
-    z-index: 1;
-    pointer-events: none;
-}
-
-.video-container {
-    position: relative;
-    z-index: 2;
-}
-
-#video-slider {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.controls {
-    text-align: center;
-    padding: 20px;
-}
-
-.controls .vid-btn {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 0 5px;
-}
-
-.controls .vid-btn.active {
-    background: #30a0c5;
 }
 
 .social-links {
@@ -261,11 +199,9 @@ footer {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: 100px;
         left: 0;
-        background: #063b50;
-        padding: 10px;
-        border-top: 1px solid #ccc;
+        background:#FFFFFF;
     }
 
     .navbar.active {
@@ -277,11 +213,18 @@ footer {
     }
 
     .navbar a {
-        color: white;
+        color: #4CBFE6;
+        font-size: 15px;
         text-decoration: none;
-        padding: 10px;
-        border-top: 1px solid #ccc;
         display: block;
+    }
+
+    .content {
+        transition: margin-top 0.3s ease;
+    }
+
+    .navbar.active ~ .content {
+        margin-top: 200px; /* adjust this based on your menu height */
     }
 }
 
