@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water District</title>
+  <link rel="icon" type="image/x-icon" href="img/logo.jpg">
+  <style>
+    /* Reset & General */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+   nav {
+  display: flex;
+  align-items: center;
+  background: #063b50;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.navbar {
+  flex: 1;                 /* Take up remaining space */
+  display: flex;
+  justify-content: center; /* Center the menu */
+  gap: 20px;
+}
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #30a0c5;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .burger .line {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    /* Hero / Logo Section */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 60px;
+      background: linear-gradient(to right, #063b50, #0d5a78);
+      color: white;
+    }
+    .hero img {
+      width: 200px;
+      height: 200px;        /* Equal dimensions */
+      border-radius: 50%;   /* Circle */
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    /* Content */
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .content h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .content p {
+      color: #555;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .image-item img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .image-item img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Video Section */
+    #video-section {
+      margin: 40px auto;
+      max-width: 900px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    #video-slider {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+    .social-links a {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, border 0.3s;
+      border: 2px solid #063b50;
+    }
+    .social-links a:hover {
+      transform: scale(1.15);
+      border-color: #30a0c5;
+    }
+    .social-links img {
+      width: 60%;
+      height: auto;
+    }
+
+    /* Footer */
+    footer {
+      background: #063b50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #063b50;
+        width: 100%;
+        padding: 20px;
+      }
+      .navbar.active {
+        display: flex;
+      }
+      .burger {
+        display: flex;
+      }
+    }
+
+    .announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.announcement-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.announcement-card:hover {
+  transform: translateY(-5px);
+}
+
+.announcement-card h4 {
+  color: #063b50;
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <img src="img/geawdlogo.png" alt="Logo">
+    <div class="burger" id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="navbar" id="navbar">
+      <a href="main.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="boards.html">Boards</a>
+      <a href="careers.html">Careers</a>
+      <a href="citizens.html">Citizen's Charter</a>
+      <a href="transparency.html">Transparency</a>
+      <a href="contacts.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="img/geawdlogo.png" alt="Logo">
+    <h1>Gen. E. Aguinaldo Water District</h1>
+    <p>Safe • Reliable • Accessible Water for All</p>
+  </section>
+
+  <!-- Content -->
+  <div class="content">
+    <h3>Welcome to the General Emilio Aguinaldo Water District</h3>
+    <p>Your trusted water service provider, ensuring safe and reliable water for all.</p>
+  </div>
+
+  <!-- Video -->
+  <section id="video-section">
+    <video src="vid1.mp4" id="video-slider" loop autoplay muted></video>
+  </section>
+
+  <!-- Gallery -->
+  <div class="image-grid">
+    <div class="image-item"><img src="Screenshot1.jpg" alt="Gallery One"></div>
+    <div class="image-item"><img src="Screenshot2.jpg" alt="Gallery Two"></div>
+    <div class="image-item"><img src="Screenshot3.jpg" alt="Gallery Three"></div>
+    <div class="image-item"><img src="Screenshot4.jpg" alt="Gallery Four"></div>
+    <div class="image-item"><img src="Screenshot5.jpg" alt="Gallery Five"></div>
+    <div class="image-item"><img src="Screenshot6.jpg" alt="Gallery Six"></div>
+  </div>
+
+<div class="announcement-grid">
+  <div class="announcement-card">
+    <h4>Service Advisory</h4>
+    <p>Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline maintenance.</p>
+  </div>
+
+  <!-- Middle Card -->
+  <div class="announcement-card tip-card">
+    <h4>💧 Tip of the Week</h4>
+    <p>Save up to 10 liters of water per day by fixing leaky faucets immediately.</p>
+  </div>
+
+  <div class="announcement-card">
+    <h4>Event</h4>
+    <p>Join our Water Conservation Seminar this September. Free registration for residents.</p>
+  </div>
+</div>
+
+
+
+  <!-- Social Links -->
+  <div class="social-links">
+    <a href="https://www.philhealth.gov.ph/" target="_blank"><img src="img/philhealth.png" alt="PhilHealth"></a>
+    <a href="https://www.gsis.gov.ph/" target="_blank"><img src="img/GSIS3.png" alt="GSIS"></a>
+    <a href="https://www.pagibigfund.gov.ph/" target="_blank"><img src="img/pag-ibig.png" alt="Pag-IBIG"></a>
+    <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank"><img src="img/CSC_logo.jpg" alt="CSC"></a>
+    <a href="https://www.dbm.gov.ph/" target="_blank"><img src="img/dbm.png" alt="DBM"></a>
+    <a href="https://lwua.gov.ph/" target="_blank"><img src="img/lwua.png" alt="LWUA"></a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Water District. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const navbar = document.getElementById('navbar');
+    burger.addEventListener('click', () => navbar.classList.toggle('active'));
+  </script>
+</body>
+</html>
