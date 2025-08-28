@@ -146,6 +146,11 @@ nav {
   width: 60%;
   height: auto;
 }
+
+
+
+
+
 footer {
   background: #063b50;
   padding: 20px;
@@ -244,3 +249,31 @@ footer {
     width: 100%;
   }
 }
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.agency {
+    text-align: center;
+    width: 120px; /* adjust as needed */
+}
+
+.agency p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.agency img {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.agency img:hover {
+    transform: scale(1.1);
+}
+

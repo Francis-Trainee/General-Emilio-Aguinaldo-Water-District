@@ -1,138 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water District</title>
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f0f4f8;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gen. E. Aguinaldo Water District</title>
 
-        h1 {
-            color: #0A74DA;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        p {
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0.5rem 0;
-            text-align: justify;
-        }
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e6f2ff, #f0f4f8);
+      color: #333;
+    }
 
-        /* Sections */
-        section#about {
-            background: #fff;
-            padding: 3rem 1.5rem;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        /* Anchor Link */
-        a {
-            display: inline-block;
-            margin-top: 1.5rem;
-            color: #0A74DA;
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid #0A74DA;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    /* Header */
+    header {
+      background: #0A74DA;
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        a:hover {
-            background-color: #063b50;
-            color: white;
-        }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #063b50;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
+    header img {
+      width: 70px;
+      height: auto;
+    }
 
-        footer p {
-            margin: 0;
-        }
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
+    /* Section Cards */
+    section {
+      background: white;
+      margin: 2rem 0;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-            p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    section h2 {
+      color: #0A74DA;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      text-align: justify;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: block;
+      width: max-content;
+      margin: 2rem auto;
+      text-align: center;
+      color: #0A74DA;
+      font-weight: bold;
+      border: 2px solid #0A74DA;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #0A74DA;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #063b50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-       
-    <div class="container">
-        <img src="logo.jpg" alt="GEAWD Water District Logo" style="width: 100px; height: auto;" class="bordered-image">
-        <h1 style="text-align: center;">Gen. E. Aguinaldo Water District</h1>
-        </div>
-    <section id="about">
-        <h1>Mandate</h1>
-        <p>
-            The GEAWD (hereinafter referred to as "District") upholds the following institutional principles embodied in its Vision, Mission, and Core Values.
-        </p>
-    </section>
-     
-    <section id="about">
-        <h1>Vision</h1>
-        <p>
-            IS TO BE A WORLD-CLASS, STATE-OF-THE-SYSTEM THAT WILL SUSTAIN 24/7 UNINTERRUPTIBLE SUPPLY OF SAFE DRINKING WATER, IN PARALLEL WITH THE PRESERVATION OF THE WATERSHED THROUGHOUT THE MUNICIPALITY OF GEN. E. AGUINALDO, CAVITE.
-        </p>
-    </section>
-     
-    <section id="about">
-        <h1>Mission</h1>
-        <p>
-            IS TO GOVERN, CONTROL, AND OVERSEE SAFE DRINKING WATER FROM CATCHMENT TO CONCESSIONAIRE'S TAPS WITH THE PREMIER WATER TRANSMISSION AND DISTRIBUTION PROCESS AND SYSTEM, USING THE FINEST DISINFECTION PROCEDURE SUPPORTED BY ENERGIZED AND OBJECTIVE-DRIVEN EMPLOYEES.
-        </p>
-    </section>
-     
-    <section id="about">
-        <h1>Core Values</h1>
-        <p>
-            Sustainability: Commit to managing water resources in a way that ensures long-term availability and environmental health.<br>
-            Transparency: Operate openly and communicate decisions, processes, and data clearly to the public.<br>
-            Stewardship: Take responsibility for protecting and preserving water resources for current and future generations.<br>
-            Customer Service: Provide exceptional service, addressing the needs and concerns of the community with respect and efficiency.<br>
-            Innovation: Embrace new technologies and methods to improve water management and service delivery.
-        </p>
-    </section>
-    
-    <a href="main.html">Back</a>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Water District. All rights reserved.</p>
-        </div>
-    </footer>
-    
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="logo.jpg" alt="GEAWD Logo">
+      <h1>Gen. E. Aguinaldo Water District</h1>
+    </div>
+  </header>
+
+  <!-- Sections -->
+  <main class="container">
+    <section>
+      <h2>Mandate</h2>
+      <p>
+        The GEAWD (hereinafter referred to as "District") upholds the following institutional principles embodied in its Vision, Mission, and Core Values.
+      </p>
+    </section>
+
+    <section>
+      <h2>Vision</h2>
+      <p>
+        IS TO BE A WORLD-CLASS, STATE-OF-THE-SYSTEM THAT WILL SUSTAIN 24/7 UNINTERRUPTIBLE SUPPLY OF SAFE DRINKING WATER, IN PARALLEL WITH THE PRESERVATION OF THE WATERSHED THROUGHOUT THE MUNICIPALITY OF GEN. E. AGUINALDO, CAVITE.
+      </p>
+    </section>
+
+    <section>
+      <h2>Mission</h2>
+      <p>
+        IS TO GOVERN, CONTROL, AND OVERSEE SAFE DRINKING WATER FROM CATCHMENT TO CONCESSIONAIRE'S TAPS WITH THE PREMIER WATER TRANSMISSION AND DISTRIBUTION PROCESS AND SYSTEM, USING THE FINEST DISINFECTION PROCEDURE SUPPORTED BY ENERGIZED AND OBJECTIVE-DRIVEN EMPLOYEES.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Values</h2>
+      <p>
+        <b>Sustainability:</b> Commit to managing water resources in a way that ensures long-term availability and environmental health.<br><br>
+        <b>Transparency:</b> Operate openly and communicate decisions, processes, and data clearly to the public.<br><br>
+        <b>Stewardship:</b> Take responsibility for protecting and preserving water resources for current and future generations.<br><br>
+        <b>Customer Service:</b> Provide exceptional service, addressing the needs and concerns of the community with respect and efficiency.<br><br>
+        <b>Innovation:</b> Embrace new technologies and methods to improve water management and service delivery.
+      </p>
+    </section>
+
+    <!-- Back Button -->
+    <a href="main.html" class="back-btn">⬅ Back</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Gen. E. Aguinaldo Water District. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

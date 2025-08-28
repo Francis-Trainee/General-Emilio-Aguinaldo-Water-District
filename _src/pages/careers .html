@@ -1,377 +1,361 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water District</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEAWD - Water District</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- External CSS Libraries -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fb;
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-     <style>
-        /* Base Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            overflow-x: hidden;
-        }
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #063b50, #0a5c74);
+      padding: 15px 25px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-        /* Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, #063b50 0%, #0a5c74 100%);
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .navbar {
+      display: flex;
+      gap: 25px;
+    }
 
-        .navbar {
-            display: flex;
-            gap: 25px;
-        }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
+    .navbar a:hover {
+      background: rgba(255,255,255,0.15);
+      color: #e0f7fa;
+    }
 
-        .navbar a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: #e0f7fa;
-        }
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        .burger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    .burger .line {
+      width: 28px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
 
-        .burger .line {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 4px 0;
-        }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0a5c74, #29b6f6);
+      text-align: center;
+      padding: 120px 20px 80px;
+      color: white;
+      margin-top: 60px;
+      border-radius: 0 0 30px 30px;
+    }
 
-        /* Main Container */
-        .container {
-            text-align: center;
-            padding: 20px;
-            margin-top: 80px; /* Adjusted for fixed nav */
-        }
+    .hero img {
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
 
-        .container img {
-            width: 120px; /* Adjusted logo size */
-            height: auto;
-        }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
 
-        .container h1 {
-            margin-top: 15px;
-            font-size: 2.5em;
-            color: #0a5c74;
-            font-weight: bold;
-        }
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: auto;
+    }
 
-        /* Content Boxes */
-        .box-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
-            margin-top: 20px;
-        }
+    /* Section Titles */
+    section h1 {
+      text-align: center;
+      color: #063b50;
+      font-size: 2em;
+      margin: 40px 0 20px;
+    }
 
-        .box {
-            width: calc(33.33% - 20px); /* 3 boxes per line */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: white;
-        }
+    /* About Section */
+    #about p {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-left: 5px solid #0a5c74;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        .box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-        }
+    /* Careers Section */
+    #careers {
+      padding: 40px 20px;
+    }
 
-        .box img {
-            width: 100%;
-            height: 200px; /* Fixed height for all images */
-            object-fit: cover;
-        }
+    .careers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        /* Vision & Mission Section */
-        #vision-mission {
-            background: #f0f8ff;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .career-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
 
-        #vision-mission img {
-            width: 100%;
-            height: auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .career-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    }
 
-        /* Video Section */
-        #video-section {
-            background: #e0f7fa;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .career-card i {
+      font-size: 2.5em;
+      color: #0a5c74;
+      margin-bottom: 15px;
+    }
 
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .career-card h2 {
+      font-size: 1.3em;
+      color: #063b50;
+      margin-bottom: 10px;
+    }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
+    .career-card p {
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
 
-        .social-links a img {
-            width: 70px;
-            height: 70px;
-            transition: transform 0.3s ease;
-        }
+    .career-card a {
+      display: inline-block;
+      color: white;
+      background: #0a5c74;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: background 0.3s ease;
+    }
 
-        .social-links a img:hover {
-            transform: scale(1.2);
-        }
+    .career-card a:hover {
+      background: #063b50;
+    }
 
-        /* Responsive Navbar */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    /* Footer */
+    footer {
+      background: #063b50;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
 
-            .navbar {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
 
-            .navbar.active {
-                display: flex;
-            }
+    footer .social-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
 
-            .navbar a {
-                width: 100%;
-                padding: 15px;
-                border-top: 1px solid #ccc;
-                text-align: center;
-                background-color: #0a5c74;
-            }
+    footer .social-links a {
+      color: white;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
 
-            .burger {
-                display: flex;
-            }
-        }
+    footer .social-links a:hover {
+      color: #29b6f6;
+    }
 
-        @media (max-width: 480px) {
-            .box {
-                width: 100%; /* 1 box per line on very small screens */
-            }
+    /* Responsive Navbar */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-            .container h1 {
-                font-size: 2em;
-            }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
 
-            .container img {
-                width: 100px;
-            }
+      .navbar.active {
+        display: flex;
+      }
 
-            .mySlides {
-                display: none;
-            }
+      .navbar a {
+        width: 100%;
+        padding: 12px;
+        border-top: 1px solid #ccc;
+        background-color: #0a5c74;
+      }
 
-            .fade {
-                animation-name: fade;
-                animation-duration: 1.5s;
-            }
-
-            @keyframes fade {
-                from {opacity: .4}
-                to {opacity: 1}
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: #063b50;
-            padding: 0px 0;
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Content Enhancements */
-        #about p {
-            border: 2px solid #063b50;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 20px 0;
-            text-align: left;
-            color: #333;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            line-height: 1.6;
-        }
-
-        #strategic-objectives {
-            border: 2px solid #063b50;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 20px 0;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            line-height: 1.6;
-        }
-
-        .bordered-img {
-            border: 5px solid #063b50;
-            margin: 30px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    
+      .burger {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="burger" id="burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        
-        <!-- Navigation Links -->
-        <div class="navbar" id="navbar">
-            <a href="main.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="boards.html">Board of Members</a>
-            <a href="careers.html">Careers</a>
-            <a href="citizens.html">Citizen's Charter</a>
-            <a href="transparency.html">Transparency Seal</a>
-            <a href="contacts.html">Contact</a>
-        </div>
-    </nav>
 
-    <div class="container">
-        <img src="logo.jpg" alt="GEAWD Water District Logo">
-        <h1>Gen. E. Aguinaldo Water District</h1>
-
-        <section id="about">
-            <h1></h1>
-            <p>General Emilio Aguinaldo Water District is committed to providing clean and safe water to the community. We strive for excellence in water management and ensure sustainable practices for future generations.</p>
-            
-
-            
-        <section id="careers">
-            <h1>Careers</h1>
-
-            <h2>Water Treatment Plant Operator</h2>
-            <p>Operates and maintains equipment that treats water to make it safe for consumption.</p>
-            
-            
-    <a href="https://www.mwdh2o.com/media/1849/water-treatment-plant-operator-i.pdf" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-                
-                
-  
-        </section>
-            
-            <h2>Civil Engineer</h2>
-            <p>Designs and manages construction projects related to water infrastructure, like pipelines and treatment facilities.</p>
-            
-                <a href="https://sites.wrcplc.co.uk/ceswielectronic/" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-                
-            
-            <h2>Hydrologist</h2>
-            <p>Studies water resources and distribution to ensure sustainable management and address water-related issues.</p>
-            
-                <a href="https://pubs.usgs.gov/wsp/1608e/report.pdf" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-                
-            
-            <h2>Environmental Scientist</h2>
-            <p>Monitors and analyzes environmental impacts related to water use and ensures compliance with regulations.</p>
-
-                <a href="https://www.rsc.org/journals-books-databases/about-journals/environmental-science-water-research-technology/" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-            <h2>Water Resource Manager</h2>
-            <p>Oversees the allocation and management of water resources to meet community needs.</p>
-            
-                            <a href="https://www.worldbank.org/en/topic/waterresourcesmanagement" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-    
-            <h2>Field Technician</h2>
-            <p>Conducts maintenance and repair work on water systems and infrastructure.</p>
-                            <a href="https://clearwatersolutions.com/job-descriptions/field-technician/" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-            <h2>Administrative Roles</h2>
-            <p>Includes positions like finance, human resources, and customer service to support the district's operations.</p>
-            
-   <a href="https://noralawater.gov.ph/images/General_Information/17-Downloads/Utilitity_Rules__Regulations.pdf" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-            <h2>Public Relations Specialist</h2>
-            <p>Manages communication with the community, handles public inquiries, and promotes water conservation efforts.</p>
-                       
-   <a href="https://mnwd.gov.ph/wp-content/uploads/ISO/Public%20Relation%20and%20External%20Affair%20Section.pdf" target="_blank">
-        <i class="fas fa-plus" style="font-size: 24px;"></i>
-    </a>
-        </section>
+  <!-- Navbar -->
+  <nav>
+    <div class="burger" id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-     
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Water District. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="navbar" id="navbar">
+      <a href="main.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="boards.html">Board</a>
+      <a href="careers.html">Careers</a>
+      <a href="citizens.html">Citizen's Charter</a>
+      <a href="transparency.html">Transparency</a>
+      <a href="contacts.html">Contact</a>
+    </div>
+  </nav>
 
-    <!-- External JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="logo.jpg" alt="GEAWD Water District Logo">
+    <h1>Gen. E. Aguinaldo Water District</h1>
+    <p>Providing clean & safe water for the community since 1996</p>
+  </div>
 
-    <script>
-        document.getElementById('burger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.getElementById('navbar').classList.toggle('active');
-        });
-    </script>
+  <!-- About -->
+  <section id="about">
+    <h1>About Us</h1>
+    <p>
+      General Emilio Aguinaldo Water District is committed to providing clean and safe water to the community. 
+      We strive for excellence in water management and ensure sustainable practices for future generations.
+    </p>
+  </section>
+
+  <!-- Careers -->
+  <section id="careers">
+    <h1>Careers</h1>
+    <div class="careers-grid">
+      <div class="career-card">
+        <i class="fas fa-industry"></i>
+        <h2>Water Treatment Operator</h2>
+        <p>Operate and maintain equipment that treats water to make it safe for consumption.</p>
+        <a href="https://www.mwdh2o.com/media/1849/water-treatment-plant-operator-i.pdf" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-drafting-compass"></i>
+        <h2>Civil Engineer</h2>
+        <p>Design and manage construction projects related to pipelines and treatment facilities.</p>
+        <a href="https://sites.wrcplc.co.uk/ceswielectronic/" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-water"></i>
+        <h2>Hydrologist</h2>
+        <p>Study water resources and distribution to ensure sustainable management.</p>
+        <a href="https://pubs.usgs.gov/wsp/1608e/report.pdf" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-leaf"></i>
+        <h2>Environmental Scientist</h2>
+        <p>Monitor and analyze environmental impacts related to water use.</p>
+        <a href="https://www.rsc.org/journals-books-databases/about-journals/environmental-science-water-research-technology/" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-hand-holding-water"></i>
+        <h2>Water Resource Manager</h2>
+        <p>Oversee allocation and management of water resources to meet community needs.</p>
+        <a href="https://www.worldbank.org/en/topic/waterresourcesmanagement" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-tools"></i>
+        <h2>Field Technician</h2>
+        <p>Conduct maintenance and repair work on water systems and infrastructure.</p>
+        <a href="https://clearwatersolutions.com/job-descriptions/field-technician/" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-users"></i>
+        <h2>Administrative Roles</h2>
+        <p>Support district operations like finance, HR, and customer service.</p>
+        <a href="https://noralawater.gov.ph/images/General_Information/17-Downloads/Utilitity_Rules__Regulations.pdf" target="_blank">Learn More</a>
+      </div>
+
+      <div class="career-card">
+        <i class="fas fa-bullhorn"></i>
+        <h2>Public Relations Specialist</h2>
+        <p>Manage communication with the community and promote conservation efforts.</p>
+        <a href="https://mnwd.gov.ph/wp-content/uploads/ISO/Public%20Relation%20and%20External%20Affair%20Section.pdf" target="_blank">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Gen. E. Aguinaldo Water District. All rights reserved.</p>
+    <p>Providing clean & sustainable water for the future.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-twitter-square"></i></a>
+      <a href="#"><i class="fab fa-instagram-square"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.getElementById('burger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navbar').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -49,13 +49,23 @@
       text-decoration: none;
       padding: 10px 15px;
       font-weight: 500;
-      transition: background 0.3s ease, color 0.3s ease;
+      position: relative;
     }
 
-    .navbar a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 6px;
-      color: #b2ebf2;
+    /* Underline hover effect */
+    .navbar a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background: #b2ebf2;
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
     }
 
     .burger {
@@ -71,47 +81,77 @@
       margin: 4px 0;
     }
 
-    /* Container */
-    .container {
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0a5c74, #29b6f6);
+      color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 100px;
+      padding: 120px 20px 100px;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      margin-top: 60px;
     }
 
-    .container img {
-      width: 130px;
+    .hero .logo-wrapper img {
+      width: 150px;
       border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    .container h1 {
-      margin-top: 15px;
-      font-size: 2.3em;
-      font-weight: bold;
+    .hero h1 {
+      font-size: 2.8em;
+      margin: 20px 0 10px;
       letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #063b50;
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #29b6f6;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
     /* Section Styling */
     section {
-      margin: 40px auto;
+      margin: 60px auto;
       max-width: 1000px;
       text-align: left;
-      padding: 25px;
+      padding: 35px;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       animation: fadeIn 1s ease;
     }
 
     section h1 {
-      font-size: 1.8em;
-      border-left: 6px solid #0a5c74;
-      padding-left: 12px;
-      margin-bottom: 15px;
+      font-size: 2em;
+      border-left: 8px solid #0a5c74;
+      padding-left: 15px;
+      margin-bottom: 20px;
     }
 
     section p, section li {
       line-height: 1.7;
       font-size: 1rem;
+      text-align: justify;
     }
 
     ol {
@@ -126,15 +166,22 @@
       display: block;
       max-width: 90%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .bordered-img:hover {
+      transform: scale(1.03);
     }
 
     /* Footer */
     footer {
-      background: #063b50;
-      padding: 30px 20px;
+      background: linear-gradient(135deg, #063b50, #0a5c74);
+      padding: 40px 20px;
       text-align: center;
       color: white;
       margin-top: 50px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
     }
 
     footer .footer-links {
@@ -199,23 +246,16 @@
     }
 
     @media (max-width: 480px) {
-      .container img {
-        width: 100px;
+      .hero .logo-wrapper img {
+        width: 110px;
       }
-      .container h1 {
-        font-size: 1.7em;
+      .hero h1 {
+        font-size: 2em;
       }
       section {
         padding: 20px;
       }
     }
-
-    #about p,
-#strategic-objectives p,
-#strategic-objectives li {
-  text-align: justify;
-}
-
 
     /* Animations */
     @keyframes fadeIn {
@@ -245,37 +285,43 @@
     </div>
   </nav>
 
-  <!-- Logo + Title -->
-  <div class="container">
-    <img src="logo.jpg" alt="GEAWD Water District Logo">
-    <h1>General Emilio Aguinaldo Water District</h1>
-  </div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-wrapper">
+        <img src="logo.jpg" alt="GEAWD Water District Logo">
+      </div>
+      <h1>General Emilio Aguinaldo Water District</h1>
+      <p>Providing safe and sustainable water service since 1996</p>
+      <a href="#about" class="btn-primary">Learn More</a>
+    </div>
+  </header>
 
- <section id="about">
-  <h1>History of GEAWD</h1>
-  <p>
-    Before 1996, the Bailen people had virtually no access to clean water. The flow of water from the Amontay River, the only supplier, did not reach the village due to droughts and a lack of proper water connections. Residents had to rely on small streams or broken pipes to get water, causing great distress, especially among children.
-  </p>
-  <p>
-    Many residents struggled to collect water from small, distant tubs, and even when pools were built, the supply remained insufficient. It took a lot of effort just to fill a bucket. During this period, the water crisis in the area was severe, leading to frustration and desperation among the people.
-  </p>
-  <p>
-    Kgg. Major Nestorio Belostrino sought to address this crisis by replacing some distribution lines and adding new faucets in different corners to help residents access water. With assistance from former Governor Juanito Remulla, a 4" diameter transmission line was built from Kalipay to the capital, significantly improving the water supply.
-  </p>
-  <p>
-    However, the water supply still fell short of meeting the needs of the growing population. The Bukal of Lightning's supply to Kulipay was only six liters per second, sufficient for only 600 families, while 1,500 families needed water. This shortage led to long waits for water, with residents often forced to carry containers to communal faucets under the scorching sun.
-  </p>
-  <p>
-    By 1996, the water situation had worsened. Collections were difficult, many residents were not paying, and illegal connections were increasing. The water lines were deteriorating, and there were no funds to replace old pipes or buy meters, leading to a severe water crisis.
-  </p>
-  <p>
-    Meetings were held to discuss solutions, and it became clear that waiting for government funding could take over a decade. To address the problem more quickly, the idea of establishing a Water District was proposed, similar to other towns in Cavite.
-  </p>
-  <p>
-    After careful study, Major Nestorio Belotrino introduced G. Aquilino Reyes to contact the Local Water Utilities Administration (LWUA) in Balara, Q.C. to establish the Water District. After discussions with LWUA, the application was processed, and the Certificate of Conditional Conformance was obtained on October 15, 1996. With the establishment of the Water District, proper management of the water supply began.
-  </p>
-</section>
-
+  <!-- History Section -->
+  <section id="about">
+    <h1>History of GEAWD</h1>
+    <p>
+      Before 1996, the Bailen people had virtually no access to clean water. The flow of water from the Amontay River, the only supplier, did not reach the village due to droughts and a lack of proper water connections. Residents had to rely on small streams or broken pipes to get water, causing great distress, especially among children.
+    </p>
+    <p>
+      Many residents struggled to collect water from small, distant tubs, and even when pools were built, the supply remained insufficient. It took a lot of effort just to fill a bucket. During this period, the water crisis in the area was severe, leading to frustration and desperation among the people.
+    </p>
+    <p>
+      Kgg. Major Nestorio Belostrino sought to address this crisis by replacing some distribution lines and adding new faucets in different corners to help residents access water. With assistance from former Governor Juanito Remulla, a 4" diameter transmission line was built from Kalipay to the capital, significantly improving the water supply.
+    </p>
+    <p>
+      However, the water supply still fell short of meeting the needs of the growing population. The Bukal of Lightning's supply to Kulipay was only six liters per second, sufficient for only 600 families, while 1,500 families needed water. This shortage led to long waits for water, with residents often forced to carry containers to communal faucets under the scorching sun.
+    </p>
+    <p>
+      By 1996, the water situation had worsened. Collections were difficult, many residents were not paying, and illegal connections were increasing. The water lines were deteriorating, and there were no funds to replace old pipes or buy meters, leading to a severe water crisis.
+    </p>
+    <p>
+      Meetings were held to discuss solutions, and it became clear that waiting for government funding could take over a decade. To address the problem more quickly, the idea of establishing a Water District was proposed, similar to other towns in Cavite.
+    </p>
+    <p>
+      After careful study, Major Nestorio Belotrino introduced G. Aquilino Reyes to contact the Local Water Utilities Administration (LWUA) in Balara, Q.C. to establish the Water District. After discussions with LWUA, the application was processed, and the Certificate of Conditional Conformance was obtained on October 15, 1996. With the establishment of the Water District, proper management of the water supply began.
+    </p>
+  </section>
 
   <!-- Objectives -->
   <section id="strategic-objectives">

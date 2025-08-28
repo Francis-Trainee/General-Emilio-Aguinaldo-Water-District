@@ -2,129 +2,369 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water District</title>
-    <link rel="icon" type="image/x-icon" href="../../public/img/geawdlogo.jpg">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
-    <link rel="stylesheet" href="../styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water District</title>
+  <link rel="icon" type="image/x-icon" href="../../public/img/geawdlogo.jpg">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+  <link rel="stylesheet" href="../styles/main.css">
+
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fb;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.8s ease;
+    }
+
+    nav .name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .logo img {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.4s ease;
+    }
+
+    nav .logo img:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    nav .logo-text h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    .burger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .content {
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .content h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #0077b6;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .image-item {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .image-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .image-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .image-item:hover img {
+      transform: scale(1.2);
+    }
+
+    /* Announcements */
+    .announcement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .announcement-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeUp 1s ease;
+    }
+
+    .announcement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip-card {
+      background: #e0f7fa;
+      border-left: 5px solid #0077b6;
+    }
+
+    /* Social Links */
+    .social-links {
+      text-align: center;
+      padding: 30px;
+      background: #f0f9ff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .social-links h3 {
+      margin-bottom: 20px;
+    }
+
+    .agency-item {
+      display: inline-block;
+      margin: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .agency-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .agency-item:hover {
+      transform: scale(1.1);
+    }
+
+    .agency-item img:hover {
+      transform: rotate(5deg) scale(1.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Menu */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: #00b4d8;
+        padding: 15px;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        border-radius: 8px;
+      }
+
+      .navbar.active {
+        display: flex;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <div class="name">
-            <div class="logo" id="geawd-logo">
-                <img src="../../public/img/geawd_logo.png" alt="Logo">
-            </div>
-            <div class="logo-text">
-                <h1>Gen. E. Aguinaldo Water District</h1>
-            </div>
-        </div>
-        <div class="navbar" id="navbar">
-            <a href="main.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="boards.html">Boards of Directors</a>
-            <a href="careers.html">Careers</a>
-            <a href="citizens.html">Citizen's Charter</a>
-            <a href="transparency.html">Transparency Seal</a>
-            <a href="contacts.html">Contact</a>
-        </div>
-        <div class="burger" id="burger">
-            <span class="material-symbols-outlined">
-                menu
-            </span>
-        </div>
-    </nav>
+  <nav>
+    <div class="name">
+      <div class="logo" id="geawd-logo">
+        <img src="../../public/img/geawd_logo.png" alt="Logo">
+      </div>
+      <div class="logo-text">
+        <h1>Gen. E. Aguinaldo Water District</h1>
+      </div>
+    </div>
+    <div class="navbar" id="navbar">
+      <a href="main.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="boards.html">Boards of Directors</a>
+      <a href="careers.html">Careers</a>
+      <a href="citizens.html">Citizen's Charter</a>
+      <a href="transparency.html">Transparency Seal</a>
+      <a href="contacts.html">Contact</a>
+    </div>
+    <div class="burger" id="burger">
+      <span class="material-symbols-outlined">menu</span>
+    </div>
+  </nav>
 
-    <div class="content">
-        <h3>Welcome to the General Emilio Aguinaldo Water District</h3>
-        <p>Your trusted water service provider, ensuring safe and reliable water for all.</p>
+  <div class="content">
+    <h3>Welcome to the General Emilio Aguinaldo Water District</h3>
+    <p>Your trusted water service provider, ensuring safe and reliable water for all.</p>
+  </div>
+
+  <div class="image-grid">
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery One"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Two"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Three"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Four"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Five"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Six"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Seven"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Eight"></div>
+    <div class="image-item"><img src="img/waterpic1.jpg" alt="Gallery Nine"></div>
+  </div>
+
+  <div class="announcement-grid">
+    <div class="announcement-card">
+      <h4>Service Advisory</h4>
+      <p>Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline maintenance.</p>
     </div>
 
-    <div class="image-grid">
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery One">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Two">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Three">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Four">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Five">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Six">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Seven">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Eight">
-        </div>
-        <div class="image-item">
-            <img src="img/waterpic1.jpg" alt="Gallery Nine">
-        </div>
+    <div class="announcement-card tip-card">
+      <h4>💧 Tip of the Week</h4>
+      <p>Save up to 10 liters of water per day by fixing leaky faucets immediately.</p>
     </div>
 
-
-    <div class="announcement-grid">
-        <div class="announcement-card">
-            <h4>Service Advisory</h4>
-            <p>Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline maintenance.</p>
-        </div>
-
-        <!-- Middle Card -->
-        <div class="announcement-card tip-card">
-            <h4>💧 Tip of the Week</h4>
-            <p>Save up to 10 liters of water per day by fixing leaky faucets immediately.</p>
-        </div>
-
-        <div class="announcement-card">
-            <h4>Event</h4>
-            <p>Join our Water Conservation Seminar this September. Free registration for residents.</p>
-        </div>
+    <div class="announcement-card">
+      <h4>Event</h4>
+      <p>Join our Water Conservation Seminar this September. Free registration for residents.</p>
     </div>
+  </div>
 
-    <div class="social-links">
-        <a href="https://www.philhealth.gov.ph/" target="_blank">
-            <img src="../../public/img/philhealth.png" alt="PhilHealth">
-        </a>
-        <a href="https://www.gsis.gov.ph/" target="_blank">
-            <img src="../../public/img/GSIS3 - Copy.png" alt="GSIS">
-        </a>
-        <a href="https://www.pagibigfund.gov.ph/" target="_blank">
-            <img src="../../public/img/images_1.png" alt="Pag-IBIG Fund">
-        </a>
-        <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank">
-            <img src="../../public/img/CSC_logo.jpg" alt="CSC">
-        </a>
-        <a href="https://www.dbm.gov.ph/" target="_blank">
-            <img src="../../public/img/dbm.png" alt="DBM">
-        </a>
-        <a href="https://lwua.gov.ph/" target="_blank">
-            <img src="../../public/img/lwua.png" alt="LWUA">
-        </a>
+  <div class="social-links">
+    <h3> Government Agencies </h3>
+    <div class="agency-item">
+      <p>PhilHealth</p>
+      <a href="https://www.philhealth.gov.ph/" target="_blank">
+        <img src="../../public/img/philhealth.png" alt="PhilHealth">
+      </a>
     </div>
+    <div class="agency-item">
+      <p>GSIS</p>
+      <a href="https://www.gsis.gov.ph/" target="_blank">
+        <img src="../../public/img/GSIS3 - Copy.png" alt="GSIS">
+      </a>
+    </div>
+    <div class="agency-item">
+      <p>Pag-IBIG Fund</p>
+      <a href="https://www.pagibigfund.gov.ph/" target="_blank">
+        <img src="../../public/img/images_1.png" alt="Pag-IBIG Fund">
+      </a>
+    </div>
+    <div class="agency-item">
+      <p>CSC</p>
+      <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank">
+        <img src="../../public/img/CSC_logo.jpg" alt="CSC">
+      </a>
+    </div>
+    <div class="agency-item">
+      <p>DBM</p>
+      <a href="https://www.dbm.gov.ph/" target="_blank">
+        <img src="../../public/img/dbm.png" alt="DBM">
+      </a>
+    </div>
+    <div class="agency-item">
+      <p>LWUA</p>
+      <a href="https://lwua.gov.ph/" target="_blank">
+        <img src="../../public/img/lwua.png" alt="LWUA">
+      </a>
+    </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2024 Water District. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Water District. All rights reserved.</p>
+  </footer>
 
-    <script>
-        const burger = document.getElementById('burger');
-        const navbar = document.getElementById('navbar');
+  <script>
+    const burger = document.getElementById('burger');
+    const navbar = document.getElementById('navbar');
 
-        burger.addEventListener('click', function () {
-            navbar.classList.toggle('active');
-        });
-    </script>
+    burger.addEventListener('click', function () {
+      navbar.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>

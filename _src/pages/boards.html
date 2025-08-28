@@ -1,305 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water District</title>
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="home.css">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water District</title>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #063b50;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-        .navbar {
-            display: flex;
-            gap: 10px;
-        }
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #f9f9f9;
+    }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #063b50;
+      padding: 10px 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
 
-        .dropdown {
-            position: relative;
-        }
+    nav img {
+      width: 60px;
+      border-radius: 50%;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #063b50;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+    nav h1 {
+      color: white;
+      font-size: 1.2em;
+      margin-left: 10px;
+    }
 
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
 
-        .dropdown-content a:hover {
-            background-color: #05507b;
-        }
+    .navbar {
+      display: flex;
+      gap: 15px;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      transition: background 0.3s ease, color 0.3s ease;
+      border-radius: 6px;
+    }
 
-        .burger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    .navbar a:hover {
+      background: #05507b;
+      color: #fff;
+    }
 
-        .burger .line {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 5px;
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #063b50;
-                position: absolute;
-                top: 50px;
-                left: 0;
-            }
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
 
-            .navbar a {
-                padding: 10px;
-                border-top: 1px solid #ccc;
-                text-align: center;
-            }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: #063b50;
+      min-width: 180px;
+      border-radius: 6px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
 
-            .dropdown-content {
-                position: static;
-                background-color: #063b50;
-                box-shadow: none;
-                border-top: 1px solid #ccc;
-            }
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+    }
 
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
 
-            .burger {
-                display: flex;
-            }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
 
-            .navbar.active {
-                display: flex;
-            }
-        }
+    /* Burger menu */
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        @media (max-width: 480px) {
-            .box {
-                width: 100%;
-            }
-        }
+    .burger .line {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 5px;
+    }
 
-        .container {
-            padding-top: 70px; /* Offset content from fixed navbar */
-            text-align: center;
-        }
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: #063b50;
+        width: 100%;
+        padding: 20px 0;
+      }
+      .navbar.active {
+        display: flex;
+      }
+      .burger {
+        display: flex;
+      }
+    }
 
-        .page {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+    /* Hero Section */
+    .hero {
+      margin-top: 70px;
+      background: linear-gradient(to right, #063b50, #05507b);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
 
-        .page h1 {
-            font-size: 2.5em;
-            color: #063b50;
-            margin-bottom: 20px;
-        }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-        .page p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #555;
-        }
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
 
-        .page a {
-            font-size: 1.2em;
-            color: white;
-            background-color: #063b50;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    /* Directors */
+    .directors {
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-        .page a:hover {
-            background-color: #05507b;
-        }
+    .directors h2 {
+      font-size: 2em;
+      color: #063b50;
+      margin-bottom: 30px;
+    }
 
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .bordered-img {
-            width: 150px; /* Adjust the width as needed */
-            height: 150px; /* Adjust the height as needed */
-            border: 5px solid #063b50;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for more depth */
-            border-radius: 50%;
-            margin-top: 40px;
-            padding: 5px; /* Added padding for a more distinct border */
-            background: linear-gradient(135deg, #63cdda, #3a506b); /* Gradient background for a more colorful effect */
-            margin: 0 auto; /* Centering the image */
-        }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
 
-        .mySlides {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        .mySlides p {
-            font-size: 1.2em;
-            color: #063b50;
-            margin-top: 10px;
-        }
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #063b50;
+      margin-bottom: 15px;
+    }
 
-        .image-line {
-            width: 20%;
-            margin: 20px auto;
-            border: 1px solid #063b50;
-        }
+    .card p {
+      font-weight: 600;
+      color: #333;
+    }
 
-        .slideshow-container {
-            margin-top: 80px; /* Adjusted to push slideshow lower on the page */
-        }
+    .slideshow-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 80px;
+}
 
-/* Footer */
-footer {
-    background: #063b50;
-    padding: 10px 0;
+.mySlides {
+    flex: 1 1 200px; /* minimum width for each item */
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: white;
-    margin-top: 40px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
 }
 
-footer:hover {
-    background: #042f3a;
-}
-
-    </style>
+  
+    /* Footer */
+    footer {
+      background: #063b50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="logo.jpg" alt="GEAWD Water District Logo" style="width: 100px; height: auto;">
-        <h1>Gen. E. Aguinaldo Water District</h1>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="GEAWD Logo">
+      <h1>GEAWD</h1>
     </div>
-        
-    <nav>
-        <div class="burger" id="burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+    <div class="burger" id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="navbar" id="navbar">
+      <a href="main.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <div class="dropdown">
+        <a href="#">Boards</a>
+        <div class="dropdown-content">
+          <a href="boards.html">Directors</a>
+          <a href="members.html">Members</a>
         </div>
-        <div class="navbar" id="navbar">
-            <a href="main.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <div class="dropdown">
-                <a href="boards.html">Boards of Directors</a>
-                <div class="dropdown-content">
-                    <a href="members.html">Members</a>
-                </div>
-            </div>
-            <a href="careers.html">Careers</a>
-            <a href="citizens.html">Citizen's Charter</a>
-            <a href="transparency.html">Transparency Seal</a>
-            <a href="contacts.html">Contact</a>
-        </div>
-    </nav>
+      </div>
+      <a href="careers.html">Careers</a>
+      <a href="citizens.html">Citizen's Charter</a>
+      <a href="transparency.html">Transparency</a>
+      <a href="contacts.html">Contact</a>
+    </div>
+  </nav>
 
-    <section id="boards">
-        <div class="container">
-            <h1>Board of Directors</h1>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>General E. Aguinaldo Water District</h1>
+    <p>Providing clean and reliable water services since 1996</p>
+  </section>
 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="b2.jpeg" alt="Board Member 1" class="bordered-img">
-            <p>Chairperson: Josefina G. Malimban</p>
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="b3.jpeg" alt="Board Member 2" class="bordered-img">
-            <p>Vice-Chairperson:Amelia M. Golfo</p>
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="b1.jpeg" alt="Board Member 3" class="bordered-img">
-            <p>Member: Virgilio M. Dimapilis</p>
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="b4.jpeg" alt="Board Member 4" class="bordered-img">
-            <p>Member:Antonio M. Papa</p>
-        </div>
-        
-        <div class="mySlides fade">
-            <img src="B5.jpg" alt="Board Member 5" class="bordered-img">
-            <p>Member: Ligaya G. Delacion</p>
-        </div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="b2.jpeg" alt="Board Member 1" class="bordered-img">
+        <p>Chairperson: Josefina G. Malimban</p>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Water District. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="mySlides fade">
+        <img src="b3.jpeg" alt="Board Member 2" class="bordered-img">
+        <p>Vice-Chairperson: Amelia M. Golfo</p>
+    </div>
 
-    <script>
-        const burger = document.getElementById('burger');
-        const navbar = document.getElementById('navbar');
+    <div class="mySlides fade">
+        <img src="b1.jpeg" alt="Board Member 3" class="bordered-img">
+        <p>Member: Virgilio M. Dimapilis</p>
+    </div>
+</div>
 
-        burger.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    </script>
-    
+<!-- NEW ROW STARTS HERE -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="b4.jpeg" alt="Board Member 4" class="bordered-img">
+        <p>Member: Antonio M. Papa</p>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="B5.jpg" alt="Board Member 5" class="bordered-img">
+        <p>Member: Ligaya G. Delacion</p>
+    </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 GEAWD Water District. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const navbar = document.getElementById('navbar');
+
+    burger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
