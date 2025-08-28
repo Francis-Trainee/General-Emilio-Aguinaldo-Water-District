@@ -54,33 +54,78 @@
       color: #ffd166;
     }
 
-    main {
-      position: relative;
-      padding-left: 260px;
+    /* Center everything except navbar & agencies */
+    main,
+    .banner-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       padding-top: 120px; /* spacing for navbar */
     }
-/* Hero Banner Section */
-.banner-section {
-  margin-top: 80px; /* space below fixed navbar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.banner-section img {
-  max-width: 150%;    /* smaller width, adjust % to taste */
-  height: auto;      /* auto height keeps proportions */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+    /* Hero Banner Section */
+    .banner-section img {
+      max-width: 60%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 
+      /* Animation */
+      opacity: 0;
+      transform: scale(0.8);
+      animation: popIn 1s ease-out forwards;
+    }
 
-    /* Swiper landscape */
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Announcements Section */
+    .announcement-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .announcement-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .announcement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .announcement-card h4 {
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+
+    .announcement-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Swiper */
     .swiper {
       width: 80%;
       max-width: 900px;
       aspect-ratio: 16/9;
-      margin: 20px auto;
+      margin: 40px auto;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -169,42 +214,6 @@
       font-size: 0.85rem;
       color: #333;
     }
-
-    /* Announcements left side */
-    .announcement-grid {
-      position: absolute;
-      left: 20px;
-      top: 55%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 220px;
-    }
-
-    .announcement-card {
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .announcement-card h4 {
-      margin-bottom: 10px;
-      font-size: 1rem;
-      color: #0077cc;
-    }
-
-    .announcement-card p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .tip-card {
-      background: #e6f7ff;
-      border-color: #0077cc;
-    }
   </style>
 </head>
 
@@ -236,17 +245,31 @@
 
   <!-- Banner Image Under Navbar -->
   <section class="banner-section">
-    <!-- Replace the src below with your uploaded image -->
     <img src="../../public/img/GENERAL EMILIO AGUINALDO WATER DISTRICT.png" alt="General E. Aguinaldo Water District Banner" />
+
+    <!-- Announcements under banner -->
+    <div class="announcement-grid">
+      <div class="announcement-card">
+        <h4>Service Advisory</h4>
+        <p>Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline maintenance.</p>
+      </div>
+
+      <div class="announcement-card">
+        <h4>💧 Tip of the Week</h4>
+        <p>Save up to 10 liters of water per day by fixing leaky faucets immediately.</p>
+      </div>
+
+      <div class="announcement-card">
+        <h4>Event</h4>
+        <p>Join our Water Conservation Seminar this September. Free registration for residents.</p>
+      </div>
+    </div>
   </section>
 
   <main>
     <div class="content">
       <h3>Welcome to the General Emilio Aguinaldo Water District</h3>
-      <p>
-        Your trusted water service provider, ensuring safe and reliable water
-        for all.
-      </p>
+      <p>Your trusted water service provider, ensuring safe and reliable water for all.</p>
     </div>
 
     <!-- Swiper Gallery -->
@@ -259,33 +282,6 @@
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
-    </div>
-
-    <!-- Left Side Announcements -->
-    <div class="announcement-grid">
-      <div class="announcement-card">
-        <h4>Service Advisory</h4>
-        <p>
-          Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline
-          maintenance.
-        </p>
-      </div>
-
-      <div class="announcement-card tip-card">
-        <h4>💧 Tip of the Week</h4>
-        <p>
-          Save up to 10 liters of water per day by fixing leaky faucets
-          immediately.
-        </p>
-      </div>
-
-      <div class="announcement-card">
-        <h4>Event</h4>
-        <p>
-          Join our Water Conservation Seminar this September. Free registration
-          for residents.
-        </p>
-      </div>
     </div>
   </main>
 
@@ -338,7 +334,6 @@
 
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
   <script>
     const burger = document.getElementById("burger");
     const navbar = document.getElementById("navbar");
