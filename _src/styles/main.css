@@ -184,12 +184,6 @@ main {
   align-items: center;
 }
 
-<<<<<<< HEAD
-
-
-
-
-=======
 .social-links h5 {
   display: flex;
   justify-content: center;
@@ -198,7 +192,6 @@ main {
 }
 
 /* Footer */
->>>>>>> 0c112f877a81b540c0fa6f2660a7ade7f601e7f8
 footer {
   position: sticky;
   width: 100%;

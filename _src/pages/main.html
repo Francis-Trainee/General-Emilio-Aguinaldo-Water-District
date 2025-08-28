@@ -14,25 +14,96 @@
 
   <link rel="stylesheet" href="../styles/main.css" />
   <style>
-    /* Adjust Swiper container size */
+    /* Navbar fix */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0077b6;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav .name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .logo img {
+      height: 40px;
+    }
+
+    nav .logo-text h1 {
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    nav .navbar a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .navbar a:hover {
+      color: #ffd166;
+    }
+
+    main {
+      position: relative;
+      padding-left: 260px;
+      padding-top: 120px; /* spacing for navbar */
+    }
+/* Hero Banner Section */
+.banner-section {
+  margin-top: 80px; /* space below fixed navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-section img {
+  max-width: 150%;    /* smaller width, adjust % to taste */
+  height: auto;      /* auto height keeps proportions */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+    /* Swiper landscape */
     .swiper {
-      width: 60%;
-      max-width: 500px;
+      width: 80%;
+      max-width: 900px;
+      aspect-ratio: 16/9;
       margin: 20px auto;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      background: #fff;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
     }
 
     .swiper-slide img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain;
       display: block;
       transition: transform 0.3s ease;
     }
 
     .swiper-slide img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     .swiper-button-next,
@@ -46,65 +117,99 @@
 
     @media (max-width: 768px) {
       .swiper {
-        width: 90%;
-        max-width: none;
+        width: 95%;
+        aspect-ratio: 4/3;
       }
     }
 
-    /* Government agencies bottom-right */
-    .social-links {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      max-width: 250px;
-      z-index: 1000;
+    /* Government Agencies Section */
+    .agencies-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-top: 2px solid #ddd;
     }
 
-    .social-links h1 {
-      font-size: 16px;
-      margin-bottom: 10px;
+    .agencies-section h2 {
       text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      color: #333;
     }
 
-    .links_group {
+    .agencies-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .agency {
       text-align: center;
-      margin-bottom: 10px;
+      width: 120px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .links_group img {
-      width: 50px;
-      height: auto;
+    .agency img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
       display: block;
-      margin: 0 auto 5px auto;
+      margin: 0 auto 8px;
     }
 
-    .links_group h5 {
-      font-size: 12px;
-      margin: 0;
+    .agency:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      background: #fff;
     }
 
-    @media (max-width: 768px) {
-      .social-links {
-        max-width: 200px;
-        padding: 10px;
-      }
+    .agency h5 {
+      font-size: 0.85rem;
+      color: #333;
+    }
 
-      .links_group img {
-        width: 40px;
-      }
+    /* Announcements left side */
+    .announcement-grid {
+      position: absolute;
+      left: 20px;
+      top: 55%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 220px;
+    }
 
-      .links_group h5 {
-        font-size: 11px;
-      }
+    .announcement-card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .announcement-card h4 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #0077cc;
+    }
+
+    .announcement-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .tip-card {
+      background: #e6f7ff;
+      border-color: #0077cc;
     }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav>
     <div class="name">
       <div class="logo" id="geawd-logo">
@@ -129,6 +234,12 @@
     </div>
   </nav>
 
+  <!-- Banner Image Under Navbar -->
+  <section class="banner-section">
+    <!-- Replace the src below with your uploaded image -->
+    <img src="../../public/img/GENERAL EMILIO AGUINALDO WATER DISTRICT.png" alt="General E. Aguinaldo Water District Banner" />
+  </section>
+
   <main>
     <div class="content">
       <h3>Welcome to the General Emilio Aguinaldo Water District</h3>
@@ -138,28 +249,19 @@
       </p>
     </div>
 
-    <!-- Gallery with Swiper -->
+    <!-- Swiper Gallery -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="../../public/img/waterpic1.jpg" alt="Gallery One" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../../public/img/waterpic2.jpg" alt="Gallery Two" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../../public/img/waterpic3.jpg" alt="Gallery Three" />
-        </div>
-        <div class="swiper-slide">
-          <img src="../../public/img/waterpic8.jpg" alt="Gallery Four" />
+          <img src="../../public/img/certificateofconformance.jpg" alt="Certificate of Conformance" />
         </div>
       </div>
-
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Left Side Announcements -->
     <div class="announcement-grid">
       <div class="announcement-card">
         <h4>Service Advisory</h4>
@@ -187,53 +289,51 @@
     </div>
   </main>
 
-  <!-- Government Agencies (Bottom Right) -->
-  <aside>
-    <div class="social-links">
-      <h1>Government Agencies</h1>
-      <div class="links_group">
+  <!-- Government Agencies Section -->
+  <section class="agencies-section">
+    <h2>Government Agencies</h2>
+    <div class="agencies-container">
+      <div class="agency">
         <a href="https://www.philhealth.gov.ph/" target="_blank">
           <img src="../../public/img/philhealth.png" alt="PhilHealth" />
         </a>
         <h5>PhilHealth</h5>
       </div>
-      <div class="links_group">
+      <div class="agency">
         <a href="https://www.gsis.gov.ph/" target="_blank">
           <img src="../../public/img/GSIS3 - Copy.png" alt="GSIS" />
         </a>
-        <h5>Government Service Insurance System</h5>
+        <h5>GSIS</h5>
       </div>
-      <div class="links_group">
+      <div class="agency">
         <a href="https://www.pagibigfund.gov.ph/" target="_blank">
           <img src="../../public/img/images_1.png" alt="Pag-IBIG Fund" />
         </a>
-        <h5>Pag-Ibig</h5>
+        <h5>Pag-IBIG</h5>
       </div>
-      <div class="links_group">
+      <div class="agency">
         <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank">
           <img src="../../public/img/CSC_logo.jpg" alt="CSC" />
         </a>
         <h5>Civil Service Commission</h5>
       </div>
-      <div class="links_group">
+      <div class="agency">
         <a href="https://www.dbm.gov.ph/" target="_blank">
           <img src="../../public/img/dbm.png" alt="DBM" />
         </a>
-        <h5>Department of Budget and Management</h5>
+        <h5>DBM</h5>
       </div>
-      <div class="links_group">
+      <div class="agency">
         <a href="https://lwua.gov.ph/" target="_blank">
           <img src="../../public/img/lwua.png" alt="LWUA" />
         </a>
-        <h5>Local Water Utilities Administration</h5>
+        <h5>LWUA</h5>
       </div>
     </div>
-  </aside>
+  </section>
 
   <footer>
-    <p>
-      &copy; 2024 General Emilio Aguinaldo Water District.
-    </p>
+    <p>&copy; 2024 General Emilio Aguinaldo Water District.</p>
   </footer>
 
   <!-- Swiper JS -->
