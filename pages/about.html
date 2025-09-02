@@ -20,7 +20,7 @@
   <header>
     <nav>
       <div class="logo" id="geawd-logo">
-        <img src="../../public/img/geawd_logo.png" alt="Logo" />
+        <img src="../public/img/geawd_logo.png" alt="Logo" />
       </div>
       <div class="navbar" id="navbar">
         <li><a href="../index.html">Home</a></li>
@@ -124,10 +124,12 @@
   </footer>
 
   <script>
-    document.getElementById(" burger").addEventListener("click", function () {
-      this.classList.toggle("active");
-      document.getElementById("navbar").classList.toggle("active");
-    }); </script>
+    const burger = document.getElementById("burger"); const navbar = document.getElementById("navbar");
+    burger.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  </script>
+
 </body>
 
 </html>

@@ -246,6 +246,12 @@ section ul li::before {
   background: #f8f8f8;
 }
 
+@media (max-width: 768px) {
+  footer p{
+    font-size: 13px;
+  }
+}
+
 /* Footer */
 footer {
   background: #057fa4;

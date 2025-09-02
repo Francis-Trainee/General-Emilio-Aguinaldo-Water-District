@@ -143,6 +143,10 @@ nav {
     color: #fff;
     margin: 0 10px;
   }
+
+  footer p{
+    font-size: 13px;
+  }
 }
 
 /* Hero Section */

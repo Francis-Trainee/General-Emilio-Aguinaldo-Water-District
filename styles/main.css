@@ -321,12 +321,10 @@ footer p {
     transition: margin-top 0.3s ease;
   }
 
-}
-
-@media (max-width: 480px) {
-  .box {
-    width: 100%;
+  footer p{
+    font-size: 13px;
   }
+
 }
 
 .social-links {
