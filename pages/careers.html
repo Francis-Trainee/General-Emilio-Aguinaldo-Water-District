@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GEAWD - Water District</title>
 
   <!-- External CSS Libraries -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
@@ -32,7 +33,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .navbar {
@@ -49,7 +50,7 @@
     }
 
     .navbar a:hover {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       color: #e0f7fa;
     }
 
@@ -82,7 +83,7 @@
       border-radius: 50%;
       background: white;
       padding: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       margin-bottom: 20px;
     }
 
@@ -114,7 +115,7 @@
       background: white;
       border-left: 5px solid #0a5c74;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     /* Careers Section */
@@ -134,14 +135,14 @@
       background: white;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
     }
 
     .career-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
     }
 
     .career-card i {
@@ -239,6 +240,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -249,14 +251,14 @@
       <div class="line"></div>
     </div>
     <div class="navbar" id="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="boards.html">Board</a>
-      <a href="careers.html">Careers</a>
-      <a href="citizens.html">Citizen's Charter</a>
-      <a href="transparency.html">Transparency</a>
-      <a href="contacts.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <li><a href="about.html">About</a></li>
+      <li><a href="boards.html">Board of Directors</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="citizens.html">Citizen's Charter</a></li>
+      <li><a href="transparency.html">Transparency Seal</a></li>
+      <li><a href="contacts.html">Contact</a></li>
     </div>
   </nav>
 
@@ -271,7 +273,7 @@
   <section id="about">
     <h1>About Us</h1>
     <p>
-      General Emilio Aguinaldo Water District is committed to providing clean and safe water to the community. 
+      General Emilio Aguinaldo Water District is committed to providing clean and safe water to the community.
       We strive for excellence in water management and ensure sustainable practices for future generations.
     </p>
   </section>
@@ -305,7 +307,8 @@
         <i class="fas fa-leaf"></i>
         <h2>Environmental Scientist</h2>
         <p>Monitor and analyze environmental impacts related to water use.</p>
-        <a href="https://www.rsc.org/journals-books-databases/about-journals/environmental-science-water-research-technology/" target="_blank">Learn More</a>
+        <a href="https://www.rsc.org/journals-books-databases/about-journals/environmental-science-water-research-technology/"
+          target="_blank">Learn More</a>
       </div>
 
       <div class="career-card">
@@ -326,14 +329,16 @@
         <i class="fas fa-users"></i>
         <h2>Administrative Roles</h2>
         <p>Support district operations like finance, HR, and customer service.</p>
-        <a href="https://noralawater.gov.ph/images/General_Information/17-Downloads/Utilitity_Rules__Regulations.pdf" target="_blank">Learn More</a>
+        <a href="https://noralawater.gov.ph/images/General_Information/17-Downloads/Utilitity_Rules__Regulations.pdf"
+          target="_blank">Learn More</a>
       </div>
 
       <div class="career-card">
         <i class="fas fa-bullhorn"></i>
         <h2>Public Relations Specialist</h2>
         <p>Manage communication with the community and promote conservation efforts.</p>
-        <a href="https://mnwd.gov.ph/wp-content/uploads/ISO/Public%20Relation%20and%20External%20Affair%20Section.pdf" target="_blank">Learn More</a>
+        <a href="https://mnwd.gov.ph/wp-content/uploads/ISO/Public%20Relation%20and%20External%20Affair%20Section.pdf"
+          target="_blank">Learn More</a>
       </div>
     </div>
   </section>
@@ -352,10 +357,11 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    document.getElementById('burger').addEventListener('click', function() {
+    document.getElementById('burger').addEventListener('click', function () {
       this.classList.toggle('active');
       document.getElementById('navbar').classList.toggle('active');
     });
   </script>
 </body>
+
 </html>

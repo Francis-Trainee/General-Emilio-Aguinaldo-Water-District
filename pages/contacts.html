@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,7 +87,7 @@
       background: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .contact-card .details {
@@ -110,7 +111,7 @@
       background: white;
       padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .map-card iframe {
@@ -128,7 +129,7 @@
       background: rgb(254, 254, 254);
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .section-heading {
@@ -146,7 +147,7 @@
       margin-bottom: 5px;
     }
 
-    .input-box input, 
+    .input-box input,
     .input-box textarea {
       width: 100%;
       padding: 10px;
@@ -241,6 +242,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -251,14 +253,14 @@
       <div class="line"></div>
     </div>
     <div class="navbar" id="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="boards.html">Boards of Members</a>
-      <a href="careers.html">Careers</a>
-      <a href="citizens.html">Citizen's Charter</a>
-      <a href="transparency.html">Transparency Seal</a>
-      <a href="contacts.html">Contact</a>
+      <a href="../index.html">Home</a>
+      <li><a href="about.html">About</a></li>
+      <li><a href="boards.html">Board of Directors</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="citizens.html">Citizen's Charter</a></li>
+      <li><a href="transparency.html">Transparency Seal</a></li>
+      <li><a href="contacts.html">Contact</a></li>
     </div>
   </nav>
 
@@ -290,7 +292,9 @@
     </div>
 
     <div class="map-card">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871934.95269522!2d121.00528214999998!3d14.599512099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a0a8228394228d%3A0x48051013291c842c!2sGeneral%20Emilio%20Aguinaldo%2C%20Cavite!5e0!3m2!1sen!2sus!4v1701796752693!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871934.95269522!2d121.00528214999998!3d14.599512099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a0a8228394228d%3A0x48051013291c842c!2sGeneral%20Emilio%20Aguinaldo%2C%20Cavite!5e0!3m2!1sen!2sus!4v1701796752693!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 
@@ -332,9 +336,10 @@
   </footer>
 
   <script>
-    document.getElementById('burger').addEventListener('click', function() {
+    document.getElementById('burger').addEventListener('click', function () {
       document.getElementById('navbar').classList.toggle('active');
     });
   </script>
 </body>
+
 </html>
