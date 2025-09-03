@@ -78,45 +78,6 @@ nav {
   border-radius: 5px;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background: #ffffff;
-  }
-
-  .navbar.active {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-    /* only show on mobile */
-  }
-
-  .navbar a {
-    color: #4cbfe6;
-    font-size: 15px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .navbar a:hover {
-    background-color: #22b8cf;
-    color: #fff;
-    margin: 0 10px;
-  }
-
-  .content {
-    transition: margin-top 0.3s ease;
-  }
-}
-
 .hero {
   background: url("") center/cover no-repeat;
   height: 40vh;
@@ -233,7 +194,43 @@ section ul li::before {
   background: #f8f8f8;
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #ffffff;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+    /* only show on mobile */
+  }
+
+  .navbar a {
+    color: #4cbfe6;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .navbar a:hover {
+    background-color: #22b8cf;
+    color: #fff;
+    margin: 0 10px;
+  }
+
+  .content {
+    transition: margin-top 0.3s ease;
+  }
+  
   .hero {
     height: 30vh;
   }
