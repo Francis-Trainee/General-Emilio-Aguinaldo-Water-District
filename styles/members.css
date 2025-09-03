@@ -111,6 +111,12 @@ footer {
   font-size: 14px;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+  footer p{
+    font-size: 13px;
+  }
+}
+
 footer p {
   margin: 5px 0;
 }

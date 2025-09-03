@@ -4,21 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Water District</title>
-  <link rel="icon" type="image/x-icon" href="../../public/img/geawdlogo.jpg" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+  <title>GEAWD</title>
+
+  <!-- External CSS -->
+  <link rel="icon" type="image/x-icon" href="public/img/geawdlogo.jpg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
   <!-- Navbar -->
   <header>
-    <nav>
+    <nav role="navigation" aria-label="Main Navigation">
       <div class="logo" id="geawd-logo">
         <img src="public/img/geawd_logo.png" alt="Logo" />
       </div>
-      <div class="navbar" id="navbar">
+      <ul class="navbar" id="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/boards.html">Board of Directors</a></li>
@@ -27,7 +28,7 @@
         <li><a href="pages/citizens.html">Citizen's Charter</a></li>
         <li><a href="pages/transparency.html">Transparency Seal</a></li>
         <li><a href="pages/contacts.html">Contact</a></li>
-      </div>
+      </ul>
       <div class="burger" id="burger">
         <span class="material-symbols-outlined"> menu </span>
       </div>
@@ -47,26 +48,49 @@
       <p>Your trusted water service provider, ensuring safe and reliable water for all.</p>
     </div>
 
-    <!-- Announcements under banner -->
-    <div class="announcement-grid">
-      <div class="announcement-card">
-        <h4>Service Advisory</h4>
-        <p>Water interruption on August 20, 2025 (8AM - 5PM) due to pipeline maintenance.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Our Mission</h4>
+        <p>Is to govern, control and oversee safe drinking water from catchment to concessionaire's taps with the
+          premier water transmission and distribution process and system and with the finest disinfection procedure by
+          the energized and objective driven employees.</p>
       </div>
 
-      <div class="announcement-card">
-        <h4>💧 Tip of the Week</h4>
-        <p>Save up to 10 liters of water per day by fixing leaky faucets immediately.</p>
+      <div class="info-card">
+        <h4>Our Vision</h4>
+        <p>Is to be a world class, state-of-the art water transmision and distribution system that will sustain 24/7 of
+          uninterruptible supply of safe drinking-water in parallel with the preservation of watershed all throughout
+          the Municipality of Gen. E. Aguinaldo, Cavite.</p>
       </div>
 
-      <div class="announcement-card">
-        <h4>Event</h4>
-        <p>Join our Water Conservation Seminar this September. Free registration for residents.</p>
+      <div class="info-card">
+        <h4>Our Core Values</h4>
+        <p>Transparency • Integrity • Service • Sustainability</p>
       </div>
     </div>
 
+
     <div class="info-images">
       <img src="public/img/save-water-infographic-scaled.jpg" alt="image">
+    </div>
+
+    <h3 class="title-tips">Water Conservation Tips</h3>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>💧 Save Water</h4>
+        <p>Turn off taps when brushing teeth or washing dishes.</p>
+      </div>
+
+      <div class="info-card">
+        <h4>🔧 Fix Leaks</h4>
+        <p>Repair leaky faucets immediately to save water and reduce bills.</p>
+      </div>
+
+      <div class="info-card">
+        <h4>🌱 Sustainable Use</h4>
+        <p>Collect rainwater for gardening and outdoor cleaning.</p>
+      </div>
     </div>
 
     <!-- Swiper Gallery -->
@@ -77,6 +101,7 @@
         </div>
       </div>
     </div>
+
   </main>
 
   <!-- Government Agencies Section -->
@@ -84,37 +109,37 @@
     <h2>Government Agencies</h2>
     <div class="agencies-container">
       <div class="agency">
-        <a href="https://www.philhealth.gov.ph/" target="_blank">
+        <a href="https://www.philhealth.gov.ph/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/philhealth.png" alt="PhilHealth" />
         </a>
         <h5>PhilHealth</h5>
       </div>
       <div class="agency">
-        <a href="https://www.gsis.gov.ph/" target="_blank">
+        <a href="https://www.gsis.gov.ph/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/GSIS3 - Copy.png" alt="GSIS" />
         </a>
         <h5>GSIS</h5>
       </div>
       <div class="agency">
-        <a href="https://www.pagibigfund.gov.ph/" target="_blank">
+        <a href="https://www.pagibigfund.gov.ph/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/images_1.png" alt="Pag-IBIG Fund" />
         </a>
         <h5>Pag-IBIG</h5>
       </div>
       <div class="agency">
-        <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank">
+        <a href="https://erpo.csc.gov.ph/eNOSAv3/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/CSC_logo.jpg" alt="CSC" />
         </a>
         <h5>Civil Service Commission</h5>
       </div>
       <div class="agency">
-        <a href="https://www.dbm.gov.ph/" target="_blank">
+        <a href="https://www.dbm.gov.ph/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/dbm.png" alt="DBM" />
         </a>
         <h5>DBM</h5>
       </div>
       <div class="agency">
-        <a href="https://lwua.gov.ph/" target="_blank">
+        <a href="https://lwua.gov.ph/" target="_blank" rel="noopener noreferrer">
           <img src="public/img/lwua.png" alt="LWUA" />
         </a>
         <h5>LWUA</h5>
@@ -122,35 +147,21 @@
     </div>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer role="contentinfo">
     <p>&copy; 2025 General Emilio Aguinaldo Water District.</p>
     <p>Providing clean & sustainable water for the future.</p>
   </footer>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    const burger = document.getElementById("burger");
-    const navbar = document.getElementById("navbar");
+    const burger = document.querySelector('.burger');
+    const navbar = document.querySelector('.navbar');
 
-    burger.addEventListener("click", function () {
-      navbar.classList.toggle("active");
-    });
-
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      effect: "slide",
-      speed: 600,
+    burger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
     });
   </script>
+
 </body>
 
 </html>

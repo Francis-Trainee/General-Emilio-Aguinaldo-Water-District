@@ -4,14 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GEAWD - Water District</title>
+  <title>GEAWD</title>
 
   <!-- External CSS -->
-  <link rel="icon" type="image/x-icon" href="../../public/img/geawdlogo.jpg" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+  <link rel="icon" type="image/x-icon" href="../public/img/geawdlogo.jpg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="../styles/about.css" />
 </head>
 
@@ -39,9 +36,14 @@
   </header>
 
   <!-- Logo + Title -->
-  <div class="container">
-    <img src="../../public/img/geawd_logo.png" alt="GEAWD Logo" class="logo-img" />
-    <h1>General Emilio Aguinaldo Water District</h1>
+  <div class="hero">
+    <div class="hero-content">
+      <img src="../public/img/geawd_logo.png" alt="GEAWD Logo" class="hero-logo">
+      <div class="hero-text">
+        <h1>Gen. E. Aguinaldo Water District</h1>
+        <p>Providing clean and reliable water services since 1996</p>
+      </div>
+    </div>
   </div>
 
   <section id="about">
@@ -111,20 +113,18 @@
 
   <!-- Image -->
   <div class="image-container">
-    <img src="../../public/img/1.png" alt="GEAWD Vision""/>
-    <img src=" ../../public/img/2.png" alt="GEAWD Mission""/>
+    <img src="../public/img/1.png" alt="GEAWD Vision""/>
+    <img src=" ../public/img/2.png" alt="GEAWD Mission""/>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>
-      &copy; 2025 General Emilio Aguinaldo Water District.
-      <p>Providing clean & sustainable water for the future.</p>
-    </p>
+    <p>&copy; 2025 General Emilio Aguinaldo Water District.</p>
+    <p>Providing clean & sustainable water for the future.</p>
   </footer>
 
   <script>
-    const burger = document.getElementById("burger"); const navbar = document.getElementById("navbar");
+    const burger = document.getElementById(" burger"); const navbar = document.getElementById("navbar");
     burger.addEventListener("click", () => {
       navbar.classList.toggle("active");
     });

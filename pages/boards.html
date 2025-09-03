@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water District</title>
-  <link rel="icon" type="image/x-icon" href="../../public/img/geawdlogo.jpg" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+
+  <!-- External CSS -->
+  <link rel="icon" type="image/x-icon" href="../public/img/geawdlogo.jpg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="../styles/boards.css">
 </head>
 
@@ -17,7 +18,7 @@
   <header>
     <nav>
       <div class="logo" id="geawd-logo">
-        <img src="../../public/img/geawd_logo.png" alt="Logo" />
+        <img src="../public/img/geawd_logo.png" alt="Logo" />
       </div>
       <div class="navbar" id="navbar">
         <li><a href="../index.html">Home</a></li>
@@ -41,10 +42,15 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h1>General E. Aguinaldo Water District</h1>
-    <p>Providing clean and reliable water services since 1996</p>
-  </section>
+  <div class="hero">
+    <div class="hero-content">
+      <img src="../public/img/geawd_logo.png" alt="GEAWD Logo" class="hero-logo">
+      <div class="hero-text">
+        <h1>Gen. E. Aguinaldo Water District</h1>
+        <p>Providing clean and reliable water services since 1996</p>
+      </div>
+    </div>
+  </div>
 
   <div class="slideshow-container">
     <div class="card-container">
@@ -79,7 +85,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 General Emilio Aguinaldo Water District.</p>
+    <p>&copy; 2025 General Emilio Aguinaldo Water District.</p>
+    <p>Providing clean & sustainable water for the future.</p>
   </footer>
 
   <script>
@@ -89,6 +96,7 @@
     burger.addEventListener('click', () => {
       navbar.classList.toggle('active');
     });
+
   </script>
 </body>
 

@@ -82,12 +82,11 @@ nav {
 .dropdown {
   display: none;
   position: absolute;
-  top: 110%; /* places it below parent */
+  top: 120%; /* places it below parent */
   left: 0;
   background: #fff;
   min-width: 180px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  border-radius: 8px;
   padding: 5px 0;
   z-index: 1000;
 }
@@ -110,60 +109,45 @@ nav {
   display: block;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background: #ffffff;
-  }
-
-  .navbar.active {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-    /* only show on mobile */
-  }
-
-  .navbar a {
-    color: #4cbfe6;
-    font-size: 15px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .navbar a:hover {
-    background-color: #22b8cf;
-    color: #fff;
-    margin: 0 10px;
-  }
-
-  footer p{
-    font-size: 13px;
-  }
-}
-
 /* Hero Section */
 .hero {
-  background: #f1f3f5;
-  color: #212529;
-  text-align: center;
-  padding: 100px 20px;
+  background: url("") center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 2.5em;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 243, 243, 0.952);
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-in-out;
+  text-align: left;
+}
+.hero-logo {
+  width: 120px;
+  height: 120px; /* Make it a perfect square */
+  object-fit: cover; /* Ensures the image scales correctly */
+  border-radius: 100%; /* Makes it a circle */
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.2em;
+.hero-text p {
+  font-size: 1.2rem;
   opacity: 0.9;
 }
 
@@ -175,6 +159,18 @@ nav {
   gap: 20px;            /* space between cards */
   margin: 50px 0;
   animation: popIn 0.5s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Each card */
@@ -211,18 +207,6 @@ nav {
   font-weight: 500;
 }
 
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 /* Footer */
 footer {
   position: sticky;
@@ -235,4 +219,68 @@ footer {
 
 footer p {
   margin: 5px 0;
+}
+
+/* Mobile styles */
+@media (min-width: 480px) and (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #ffffff;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+    /* only show on mobile */
+  }
+
+  .burger span {
+    font-size: 25px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .navbar a {
+    color: #4cbfe6;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .navbar a:hover {
+    background-color: #22b8cf;
+    color: #fff;
+    margin: 0 10px;
+  }
+
+  .hero {
+    height: 30vh;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  footer p{
+    font-size: 13px;
+  }
 }

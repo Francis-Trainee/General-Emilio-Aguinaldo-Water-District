@@ -4,181 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Water District</title>
+  <title>GEAWD</title>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      background: #f4f7f9;
-      color: #333;
-    }
-
-    /* Navbar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #063b50;
-      padding: 12px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar {
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: #ffd700;
-    }
-
-    .burger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .burger .line {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px;
-      border-radius: 3px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin: 20px 0;
-      color: #063b50;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin: 15px 0;
-      color: #444;
-    }
-
-    /* Image styling */
-    img.bordered-image {
-      border: 3px solid #063b50;
-      padding: 5px;
-      border-radius: 12px;
-      max-width: 100%;
-      height: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
-    }
-
-    img.bordered-image:hover {
-      transform: scale(1.03);
-    }
-
-    /* Card-style section */
-    .info-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      line-height: 1.6;
-      border-left: 6px solid #063b50;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Footer */
-    footer {
-      background-color: #063b50;
-      color: #fff;
-      padding: 15px 0;
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #063b50;
-      }
-
-      .navbar a {
-        padding: 12px;
-        border-top: 1px solid #0a4a65;
-        font-size: 18px;
-      }
-
-      .burger {
-        display: flex;
-      }
-
-      .navbar.active {
-        display: flex;
-      }
-    }
-  </style>
+  
+  <link rel="icon" type="image/x-icon" href="public/img/geawdlogo.jpg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="../styles/citizens.css" />
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav>
-    <div class="burger" id="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+  <header>
+    <nav role="navigation" aria-label="Main Navigation">
+      <div class="logo" id="geawd-logo">
+        <img src="../public/img/geawd_logo.png" alt="Logo" />
+      </div>
+      <ul class="navbar" id="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="boards.html">Board of Directors</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="citizens.html">Citizen's Charter</a></li>
+        <li><a href="transparency.html">Transparency Seal</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+      <div class="burger" id="burger">
+        <span class="material-symbols-outlined"> menu </span>
+      </div>
+    </nav>
+  </header>
 
-    <div class="navbar" id="navbar">
-      <a href="../index.html">Home</a>
-      <li><a href="about.html">About</a></li>
-      <li><a href="boards.html">Board of Directors</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="citizens.html">Citizen's Charter</a></li>
-      <li><a href="transparency.html">Transparency Seal</a></li>
-      <li><a href="contacts.html">Contact</a></li>
+  <!-- Logo + Title -->
+  <div class="hero">
+    <div class="hero-content">
+      <img src="../public/img/geawd_logo.png" alt="GEAWD Logo" class="hero-logo">
+      <div class="hero-text">
+        <h1>Gen. E. Aguinaldo Water District</h1>
+        <p>Providing clean and reliable water services since 1996</p>
+      </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Main Content -->
   <div class="container">
-    <img src="logo.jpg" alt="GEAWD Water District Logo" style="width: 120px;" class="bordered-image">
-    <h1>Gen. E. Aguinaldo Water District</h1>
-
     <section id="citizens-charter">
-      <img src="redtape.jpg" alt="Red Tape" class="bordered-image" style="margin:20px auto;">
+      <img src="../public/img/redtape.jpg" alt="Red Tape" class="bordered-image" style="margin:20px auto;">
 
       <h1>Anti-Red Tape Act of 2007</h1>
 
