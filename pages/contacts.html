@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GEAWD</title>
 
- <!-- External CSS -->
+  <!-- External CSS -->
   <link rel="icon" type="image/x-icon" href="../public/img/geawdlogo.jpg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="../styles/contacts.css" />
-  
+
 </head>
 
 <body>
@@ -49,53 +49,59 @@
     </div>
   </div>
 
-  <!-- Contact Info + Map -->
-  <div class="contact-info-map">
-    <div class="contact-card">
-      <div class="address details">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="topic">Address</div>
-        <div class="text-two">J.P. Rizal St., Gen. E. Aguinaldo, Cavite 4124</div>
-        <div class="text-two">Philippines</div>
-      </div>
-      <div class="phone details">
-        <i class="fas fa-phone"></i>
-        <div class="topic">Land Line</div>
-        <div class="text-one">(046) 894-8442</div>
-      </div>
-      <div class="email details">
-        <i class="fas fa-envelope"></i>
-        <div class="topic">Email</div>
-        <div class="text-one">gen.eaguinaldowd@yahoo.com</div>
+  <main>
+    <!-- Contact Info + Map -->
+    <div class="contact-info-map">
+      <div class="contact-card">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-two">J.P. Rizal St., Gen. E. Aguinaldo, Cavite 4124</div>
+          <div class="text-two">Philippines</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone"></i>
+          <div class="topic">Land Line</div>
+          <div class="text-one">(046) 894-8442</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">gen.eaguinaldowd@yahoo.com</div>
+        </div>
       </div>
     </div>
+
 
     <div class="map-card">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3868.1616417732544!2d120.7950722793457!3d14.185309099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sJ.P.%20Rizal%20St.%2C%20Gen.%20E.%20Aguinaldo%2C%20Cavite%204124!5e0!3m2!1sen!2sph!4v1756882145084!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3868.1616417732544!2d120.7950722793457!3d14.185309099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sJ.P.%20Rizal%20St.%2C%20Gen.%20E.%20Aguinaldo%2C%20Cavite%204124!5e0!3m2!1sen!2sph!4v1756882145084!5m2!1sen!2sph"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </div>
 
-  <!-- Feedback Form -->
-  <section id="contact" class="contact-section">
-    <div class="section-heading">
-      <h1>Send us a Message and Feedback</h1>
-    </div>
-    <form action="https://formspree.io/f/xdknzqnd" method="post">
-      <div class="input-box">
-        <label for="name">Your Name</label>
-        <input id="name" name="name" type="text" placeholder="Enter your name">
+    <!-- Feedback Form -->
+    <section id="contact" class="contact-section">
+      <div class="section-heading">
+        <h1>Send us a Message and Feedback</h1>
       </div>
-      <div class="input-box">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="Enter your email">
-      </div>
-      <div class="input-box">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Enter your message"></textarea>
-      </div>
-      <button class="send-now-btn" type="submit">Send Now</button>
-    </form>
-  </section>
+      <form action="https://formspree.io/f/xdknzqnd" method="post">
+        <div class="input-box">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name">
+        </div>
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email">
+        </div>
+        <div class="input-box">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+        </div>
+        <button class="send-now-btn" type="submit">Send Now</button>
+      </form>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>

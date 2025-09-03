@@ -169,6 +169,7 @@ nav {
 
 .map-card {
   flex: 1.5;
+  width: 90%;
   background: white;
   padding: 10px;
   border-radius: 8px;
@@ -185,7 +186,6 @@ nav {
 /* Feedback Form */
 .contact-section {
   width: 90%;
-  max-width: 500px;
   margin: 30px auto 50px;
   background: rgb(254, 254, 254);
   padding: 30px;
@@ -223,8 +223,8 @@ textarea {
 .send-now-btn {
   background: #063b50;
   color: white;
-  display: block;          /* make it block-level */
-  margin: 20px auto;       /* auto centers horizontally */
+  display: block; /* make it block-level */
+  margin: 20px auto; /* auto centers horizontally */
   text-align: center;
   border: none;
   padding: 10px 20px;
@@ -232,7 +232,6 @@ textarea {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 
 .send-now-btn:hover {
   background: #0a5c7a;
@@ -311,7 +310,15 @@ footer p {
     margin-top: 10px;
   }
 
-  footer p{
+  main {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  footer p {
     font-size: 13px;
   }
 }
