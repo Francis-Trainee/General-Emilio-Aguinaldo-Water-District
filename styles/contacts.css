@@ -79,6 +79,14 @@ nav {
   border-radius: 5px;
 }
 
+main {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .hero {
   background: url("") center/cover no-repeat;
   height: 40vh;
@@ -122,7 +130,7 @@ nav {
 
 /* Logo/Heading */
 .container {
-  width: 80%;
+  width: 50%;
   margin: 100px auto 20px;
   text-align: center;
 }
@@ -138,8 +146,7 @@ nav {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-  width: 90%;
-  max-width: 1200px;
+  width: 50%;
   margin: 30px auto;
 }
 
@@ -169,7 +176,7 @@ nav {
 
 .map-card {
   flex: 1.5;
-  width: 90%;
+  width: 50%;
   background: white;
   padding: 10px;
   border-radius: 8px;
@@ -185,7 +192,7 @@ nav {
 
 /* Feedback Form */
 .contact-section {
-  width: 90%;
+  width: 50%;
   margin: 30px auto 50px;
   background: rgb(254, 254, 254);
   padding: 30px;
@@ -311,11 +318,31 @@ footer p {
   }
 
   main {
-    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+  }
+
+  .container {
+    width: 80%;
+    margin: 70px auto 20px;
+  }
+
+  .contact-info-map {
+    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .map-card {
+    width: 90%;
+  }
+
+  .contact-section {
+    width: 90%;
+    margin: 20px auto 40px;
+    padding: 20px;
   }
 
   footer p {
