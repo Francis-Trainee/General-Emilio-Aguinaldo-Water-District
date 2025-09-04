@@ -95,7 +95,7 @@
             <center>
                 <h3>Residential Water Rates</h3>
             </center>
-            <table>
+            <table class="rates-table">
                 <tr>
                     <th>Cubic Meter</th>
                     <th>Rate</th>
@@ -125,8 +125,8 @@
             <center>
                 <h3>Commercial Water Rates</h3>
             </center>
-            <table>
-                <tr>
+            <table class="rates-table">
+                <tr >
                     <th>Commercial Type</th>
                     <th>1-10</th>
                     <th>11-20</th>
@@ -191,19 +191,25 @@
             const burger = document.getElementById('burger');
             const navbar = document.getElementById('navbar');
             burger.addEventListener('click', () => {
-                navbar.classList.toggle('active');
-                burger.classList.toggle('active');
+            navbar.classList.toggle('active');
+            burger.classList.toggle('active');
             });
 
             // Section Reveal Animation
             const sections = document.querySelectorAll('section');
+            const footer = document.querySelector('footer');
             const revealOnScroll = () => {
-                sections.forEach(sec => {
-                    const rect = sec.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100) {
-                        sec.classList.add('show');
-                    }
-                });
+            const footerRect = footer.getBoundingClientRect();
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                // Only add 'show' if section is above the footer
+                if (
+                rect.top < window.innerHeight - 100 &&
+                rect.bottom < footerRect.top
+                ) {
+                sec.classList.add('show');
+                }
+            });
             };
             window.addEventListener('scroll', revealOnScroll);
             revealOnScroll();

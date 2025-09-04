@@ -260,7 +260,19 @@ section ul li::before {
   .rates-section th,  
   .rates-section td {
     font-size: 12px;
+    width: fit-content;
   }
+
+  .rates-table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  
+  .rates-table th,
+  .rates-table td {
+    white-space: nowrap;
+  } 
 
   section {
     margin: 15px;
